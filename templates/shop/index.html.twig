@@ -1,0 +1,66 @@
+{# templates/shop/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Shop{% endblock %}
+
+{% block body %}
+    <style>
+        .show-description-btn {
+            background-color: black; /* Couleur de fond */
+            color: #fff; /* Couleur du texte */
+            border: none; /* Supprimer la bordure */
+            padding: 10px 20px; /* Ajouter un espace autour du texte */
+            border-radius: 30px; /* Ajouter des coins arrondis */
+            cursor: pointer; /* Ajouter un pointeur au survol */
+        }
+
+        .show-description-btn:hover {
+            background-color: black; /* Couleur de fond au survol */
+        }
+    </style>
+
+    <!-- Start Hero Section -->
+    <div class="hero">
+        <!-- ... Votre code actuel pour la section héroïque ... -->
+    </div>
+    <!-- End Hero Section -->
+
+    <div class="untree_co-section product-section before-footer-section">
+        <div class="container">
+            <div class="row">
+                {% for produit in produits %}
+                    <div class="col-12 col-md-4 col-lg-3 mb-5">
+                        <div class="product-item">
+                            <img src="{{ asset('uploads/image/' ~ produit.image) }}" class="img-fluid product-thumbnail" alt="{{ produit.nom }}">
+                            <h3 class="product-title">{{ produit.nom }}</h3>
+                            <strong class="product-price">${{ produit.prix }}</strong>
+                            <br>
+                            <button class="btn btn-info show-description-btn" data-description="{{ produit.description }}">See description</button>
+                            <div class="description-container" style="display: none;">
+                                <p>{{ produit.description | raw }}</p>
+                            </div>
+                            <a href="{{ path('cart_add', {id:produit.id}) }}" class="btn btn-success">Add to Cart</a>
+
+                            <span class="icon-cross">
+                                <img src="{{ asset('uploads/image/' ~ produit.image) }}" class="img-fluid">
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var buttons = document.querySelectorAll('.show-description-btn');
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var descriptionContainer = this.nextElementSibling;
+                    descriptionContainer.style.display = descriptionContainer.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+{% endblock %}

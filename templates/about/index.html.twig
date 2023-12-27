@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Untree.co">
+    <link rel="shortcut icon" href="../../favicon.png">
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="../../css/tiny-slider.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <title>Furniture and Interior Design Website</title>
+
+</head>
+
+<body>
+
+<style>
+    /* Ajoutez ces styles pour rendre les photos arrondies avec une ombre */
+    .img-fluid {
+        border-radius: 50%; /* Pour rendre l'image circulaire */
+        overflow: hidden; /* Pour cacher les coins arrondis */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+        max-width: 50%;
+    }
+
+    /* Ajoutez ces styles pour rendre les images du slider circulaires */
+    .tns-item img {
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+</style>
+
+
+<!-- Start Header/Navigation -->
+<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+    <div class="container">
+        <a class="navbar-brand" href="index.html">ACO FURNITURE<span>.</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('app_home_page') }}">Home</a>
+                </li>
+                <li><a class="nav-link" href="{{ path('app_shop') }}">Shop</a></li>
+                <li><a class="nav-link" href="{{ path('app_about') }}">About us</a></li>
+                <li><a class="nav-link" href="{{ path('app_contact') }}">Contact us</a></li>
+            </ul>
+
+            <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                <li><a class="nav-link" href="{{ path('app_user_profil') }}"><img src="../../images/user.svg"></a></li>
+                <li><a class="nav-link" href="{{ path('app_cart') }}"><img src="../../images/cart.svg"></a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+<!-- End Header/Navigation -->
+
+
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <!-- Start Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1>About Us</h1>
+                        <p class="mb-4">Welcome to ACO FURNITURE, your destination for curated furniture and timeless design. Our team, driven by passion and craftsmanship, is here to transform your spaces into stylish havens of comfort. Explore our curated collections, enjoy personalized design consultations, and experience a seamless journey to elevated living with ACO FURNITURE..</p>
+                        <p><a href="{{ path('app_shop') }}" class="btn btn-secondary me-2">Shop Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="hero-img-wrap">
+                        <img src="../../images/couch.png" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+
+
+
+<!--Why Choose Us Section -->
+<div class="why-choose-section">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-6">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p>Choose ACO FURNITURE for an exceptional e-commerce experience, where quality, style, and customer satisfaction converge.</p>
+
+                <div class="row my-5">
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src="../../images/truck.svg" alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>Fast &amp; Free Shipping</h3>
+                            <p> Enjoy fast and free delivery for a hassle-free shopping experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src="../../images/bag.svg" alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>Easy to Shop</h3>
+                            <p>Streamlined, user-friendly, and hassle-free – making your furniture shopping a breeze.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src="../../images/support.svg" alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>24/7 Support</h3>
+                            <p> Our dedicated team is here around the clock to assist you, ensuring a seamless and reliable support experience whenever you need it.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-6">
+                        <div class="feature">
+                            <div class="icon">
+                                <img src="../../images/return.svg" alt="Image" class="imf-fluid">
+                            </div>
+                            <h3>Hassle Free Returns</h3>
+                            <p>Shop with confidence knowing that our easy and straightforward return process ensures a stress-free experience if you ever need to make a return or exchange.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="img-wrap">
+                    <img src="../../images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Why Choose Us Section -->
+
+    <!-- Start Team Section -->
+<!-- Start Team Section -->
+<div class="untree_co-section">
+    <div class="container">
+
+        <div class="row mb-5">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-title">Our Team</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <!-- Start Column 1 -->
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-0 text-center">
+                <img src="../../images/AMAL.jpg" class="img-fluid mb-5">
+                <h3 class=""><span class="">AMAL</span> BEN OTHMEN</h3>
+                <span class="d-block position mb-4">DESIGNER</span>
+                <p>""Elevating Ideas, Crafting Excellence: Where Vision Meets Design.""</p>
+            </div>
+            <!-- End Column 1 -->
+
+            <!-- Start Column 2 -->
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-0 text-center">
+                <img src="../../images/OUMAIMA.jpg.jpg" class="img-fluid mb-5">
+                <h3 class=""><span class="">OUMAIMA</span> GUDRI</h3>
+                <span class="d-block position mb-4">ACO FOUNDER</span>
+                <p>""Pioneering Visions, Shaping Tomorrow.""</p>
+            </div>
+            <!-- End Column 2 -->
+
+            <!-- Start Column 3 -->
+            <div class="col-12 col-md-6 col-lg-4 mb-5 mb-md-0 text-center">
+                <img src="../../images/CHAIMA.jpg.jpg" class="img-fluid mb-5">
+                <h3 class=""><span class="">CHAIMA</span> ALOUI</h3>
+                <span class="d-block position mb-4">ARCHITECTE</span>
+                <p>""Architecting Dreams, Crafting Realities.""</p>
+            </div>
+            <!-- End Column 3 -->
+
+        </div>
+    </div>
+</div>
+<!-- End Team Section -->
+    <!-- End Team Section -->
+
+
+
+<!-- Start Testimonial Slider -->
+<div class="testimonial-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mx-auto text-center">
+                <h2 class="section-title">OUR TEAM</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="testimonial-slider-wrap text-center">
+
+                    <div id="testimonial-nav">
+                        <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+                        <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+                    </div>
+
+                    <div class="testimonial-slider">
+
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+
+                                    <div class="testimonial-block text-center">
+                                        <blockquote class="mb-5">
+                                            <p>&ldquo;At ACO furniture , our team is a passionate group of skilled professionals dedicated to making your design aspirations a reality. From creative designers with an eye for style to meticulous craftsmen ensuring top-notch quality, each member plays a crucial role. Our customer support team is available around the clock, and our delivery experts ensure your pieces arrive with care. Together, we aim to turn your living spaces into a showcase of modern sophistication and comfort&rdquo;</p>
+                                        </blockquote>
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="../../public/images/AMAL.jpg" class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">AMAL BEN OTHMEN</h3>
+                                            <span class="position d-block mb-3"> DESIGNER</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END item -->
+
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+
+                                    <div class="testimonial-block text-center">
+                                        <blockquote class="mb-5">
+                                            <p>&ldquo; At ACO furniture , our team is a passionate group of skilled professionals dedicated to making your design aspirations a reality. From creative designers with an eye for style to meticulous craftsmen ensuring top-notch quality, each member plays a crucial role. Our customer support team is available around the clock, and our delivery experts ensure your pieces arrive with care. Together, we aim to turn your living spaces into a showcase of modern sophistication and comfort.&rdquo;</p>
+                                        </blockquote>
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="../../images/person-1.png"  class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">CHAIMA ALOUI</h3>
+                                            <span class="position d-block mb-3">DESIGNER</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END item -->
+
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+
+                                    <div class="testimonial-block text-center">
+                                        <blockquote class="mb-5">
+                                            <p>&ldquo;At ACO furniture , our team is a passionate group of skilled professionals dedicated to making your design aspirations a reality. From creative designers with an eye for style to meticulous craftsmen ensuring top-notch quality, each member plays a crucial role. Our customer support team is available around the clock, and our delivery experts ensure your pieces arrive with care. Together, we aim to turn your living spaces into a showcase of modern sophistication and comfort.&rdquo;</p>
+                                        </blockquote>
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="../../images/"  class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">OUMAIMA GUEDRI</h3>
+                                            <span class="position d-block mb-3">DESIGNER</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END item -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Testimonial Slider -->
+
+<!-- Start Footer Section -->
+<footer class="footer-section">
+    <div class="container relative">
+
+        <div class="sofa-img">
+            <img src="../../images/sofa.png" alt="Image" class="img-fluid">
+        </div>
+
+
+
+        <div class="row g-5 mb-5">
+            <div class="col-lg-4">
+                <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">ACO FURNITURE<span>.</span></a></div>
+                <p class="mb-4">Design exclusif, confort exceptionnel. Créez un intérieur qui vous ressemble.</p>
+
+                <ul class="list-unstyled custom-social">
+                    <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="row links-wrap">
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Knowledge base</a></li>
+                            <li><a href="#">Live chat</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Our team</a></li>
+                            <li><a href="#">Leadership</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Nordic Chair</a></li>
+                            <li><a href="#">Kruzo Aero</a></li>
+                            <li><a href="#">Ergonomic Chair</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-top copyright">
+            <div class="row pt-4">
+                <div class="col-lg-6">
+                    <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by Amal & Chaima & Oumaima</a>  <!-- License information: https://untree.co/license/ -->
+                    </p>
+                </div>
+
+                <div class="col-lg-6 text-center text-lg-end">
+                    <ul class="list-unstyled d-inline-flex ms-auto">
+                        <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- End Footer Section -->
+
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script src="../../js/tiny-slider.js"></script>
+<script src="../../js/custom.js"></script>
+</body>
+
+</html>
+
+
+{% endblock %}

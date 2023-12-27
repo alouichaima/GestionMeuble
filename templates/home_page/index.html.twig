@@ -1,0 +1,239 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} HomePage{% endblock %}
+
+{% block body %}
+
+
+    <!-- Start Product Section -->
+    <div class="product-section">
+        <div class="container">
+            <div class="row">
+
+                <!-- Start Column 1 -->
+                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                    <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
+                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
+                    <p><a href="{{ path('app_shop') }}" class="btn">Explore</a></p>
+                </div>
+                <!-- End Column 1 -->
+
+                <!-- Start Column 2 -->
+                {% for produit in produits %}
+
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+
+                    <a class="product-item" href="{{ path('app_cart') }}">
+                        <img src="{{ asset('uploads/image/' ~ produit.image) }}"class="img-fluid product-thumbnail">
+                        <h3 class="product-title">{{ produit.nom }}</h3>
+                        <strong class="product-price">{{ produit.prix }}</strong>
+
+                        <span class="icon-cross">
+								<img src="../../images/cross.svg" class="img-fluid">
+							</span>
+                    </a>
+
+                </div>
+                {% endfor %}
+
+                <!-- End Column 2 -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End Product Section -->
+
+    <!-- Start Why Choose Us Section -->
+    <div class="why-choose-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Why Choose Us</h2>
+                    <p>Choose ACO FURNITURE for an exceptional e-commerce experience, where quality, style, and customer satisfaction converge.</p>
+
+                    <div class="row my-5">
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="../../images/truck.svg" alt="Image" class="imf-fluid">
+                                </div>
+                                <h3>Fast &amp; Free Shipping</h3>
+                                <p> Enjoy fast and free delivery for a hassle-free shopping experience.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="../../images/bag.svg" alt="Image" class="imf-fluid">
+                                </div>
+                                <h3>Easy to Shop</h3>
+                                <p>Streamlined, user-friendly, and hassle-free – making your furniture shopping a breeze.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="../../images/support.svg" alt="Image" class="imf-fluid">
+                                </div>
+                                <h3>24/7 Support</h3>
+                                <p> Our dedicated team is here around the clock to assist you, ensuring a seamless and reliable support experience whenever you need it.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="../../images/return.svg" alt="Image" class="imf-fluid">
+                                </div>
+                                <h3>Hassle Free Returns</h3>
+                                <p>Shop with confidence knowing that our easy and straightforward return process ensures a stress-free experience if you ever need to make a return or exchange.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="img-wrap">
+                        <img src="../../images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Why Choose Us Section -->
+
+    <!-- Start We Help Section -->
+    <div class="we-help-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="imgs-grid">
+                        <div class="grid grid-1"><img src="../../images/img-grid-1.jpg" alt="Untree.co"></div>
+                        <div class="grid grid-2"><img src="../../images/img-grid-2.jpg" alt="Untree.co"></div>
+                        <div class="grid grid-3"><img src="../../images/img-grid-3.jpg" alt="Untree.co"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 ps-lg-5">
+                    <h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
+                    <p>Embark on a guided journey towards modern interior design excellence with us. Our mission is to assist you in crafting spaces that seamlessly blend contemporary elegance with functional comfort. Here's how we make it easy for you</p>
+
+                    <ul class="list-unstyled custom-list my-4">
+                        <li>Explore Curated Collections: Begin by exploring our carefully curated furniture collections, each piece designed to elevate your space.</li>
+                        <li>Receive Expert Design Advice: Get personalized design advice from our experts, helping you envision and plan the layout and decor for your ideal modern interior.</li>
+                        <li>Partner in Execution: Let us be your partner in bringing your vision to life. Step by step, we'll work together to ensure every room reflects the perfect blend of sophistication and innovation</li>
+                        <li>Effortless Ordering Process: Enjoy a seamless and stress-free ordering process, with user-friendly interfaces and transparent transactions.</li>
+                    </ul>
+                   <p>With these steps, we make modern interior design accessible and enjoyable, creating a space that truly resonates with your unique style and preferences</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End We Help Section -->
+
+
+    <!-- Start Testimonial Slider -->
+    <div class="testimonial-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h2 class="section-title">OUR TEAM</h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="testimonial-slider-wrap text-center">
+
+                        <div id="testimonial-nav">
+                            <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+                            <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+                        </div>
+
+                        <div class="testimonial-slider">
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;At ACO furniture , our team is a passionate group of skilled professionals dedicated to making your design aspirations a reality. From creative designers with an eye for style to meticulous craftsmen ensuring top-notch quality, each member plays a crucial role. Our customer support team is available around the clock, and our delivery experts ensure your pieces arrive with care. Together, we aim to turn your living spaces into a showcase of modern sophistication and comfort&rdquo;</p>
+                                            </blockquote>
+
+                                            <div class="author-info">
+                                                <div class="author-pic">
+                                                    <img src="../../public/images/AMAL.jpg" class="img-fluid">
+                                                </div>
+                                                <h3 class="font-weight-bold">AMAL BEN OTHMEN</h3>
+                                                <span class="position d-block mb-3"> DESIGNER</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo; At ACO furniture , our team is a passionate group of skilled professionals dedicated to making your design aspirations a reality. From creative designers with an eye for style to meticulous craftsmen ensuring top-notch quality, each member plays a crucial role. Our customer support team is available around the clock, and our delivery experts ensure your pieces arrive with care. Together, we aim to turn your living spaces into a showcase of modern sophistication and comfort.&rdquo;</p>
+                                            </blockquote>
+
+                                            <div class="author-info">
+                                                <div class="author-pic">
+                                                    <img src="../../images/person-1.png"  class="img-fluid">
+                                                </div>
+                                                <h3 class="font-weight-bold">CHAIMA ALOUI</h3>
+                                                <span class="position d-block mb-3">DESIGNER</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;At ACO furniture , our team is a passionate group of skilled professionals dedicated to making your design aspirations a reality. From creative designers with an eye for style to meticulous craftsmen ensuring top-notch quality, each member plays a crucial role. Our customer support team is available around the clock, and our delivery experts ensure your pieces arrive with care. Together, we aim to turn your living spaces into a showcase of modern sophistication and comfort.&rdquo;</p>
+                                            </blockquote>
+
+                                            <div class="author-info">
+                                                <div class="author-pic">
+                                                    <img src="../../images/"  class="img-fluid">
+                                                </div>
+                                                <h3 class="font-weight-bold">OUMAIMA GUEDRI</h3>
+                                                <span class="position d-block mb-3">DESIGNER</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END item -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonial Slider -->
+
+
+
+{% endblock %}

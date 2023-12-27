@@ -1,0 +1,215 @@
+{% block title %}{% endblock %}
+
+{% block body %}
+    <style>
+        body,
+        .signin {
+            background-color: #114226;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .login {
+            position: relative;
+            height: 560px;
+            width: 405px;
+            margin: auto;
+            padding: 60px 60px;
+            background: url(https://th.bing.com/th/id/OIP.-ygMQWoGKvme8KCbasRFwQHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain) no-repeat   center center #505050;
+            background-size: cover;
+            box-shadow: 0px 30px 60px -5px #000;
+        }
+
+        form {
+            padding-top: 80px;
+            margin-top: 1cm;
+
+        }
+
+        .active {
+            border-bottom: 0px solid #1161ed;
+        }
+
+
+
+        h2 {
+            padding-left: 12px;
+            font-size: 22px;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            letter-spacing: 2px;
+            display: inline-block;
+            font-weight: 100;
+        }
+
+        h2:first-child {
+            padding-left: 150px;
+        }
+
+        span {
+            text-transform: uppercase;
+            font-size: 15px;
+            opacity: 0.9;
+            display: inline-block;
+            position: relative;
+            top: -50px;
+            transition: all 0.5s ease-in-out;
+            color: #000000;
+        }
+
+        .text {
+            border: none;
+            width: 89%;
+            padding: 10px 20px;
+            display: block;
+            height: 15px;
+            border-radius: 20px;
+            background: #FFFFFF;
+            border: 2px solid rgba(255, 255, 255, 0);
+            overflow: hidden;
+            margin-top: 15px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .text:focus {
+            outline: 0;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0);
+        }
+
+        .text:focus + span {
+            opacity: 0.9;
+        }
+
+        input[type="text"] {
+            font-family: 'Montserrat', sans-serif;
+            color: #000000;
+        }
+
+        input[type="password"] {
+            font-family: 'Montserrat', sans-serif;
+            color: #000000;
+
+        }
+
+
+
+        input {
+            display: inline-block;
+            padding-top: 3px;
+            font-size: 14px;
+            height: 1cm;
+            margin-left: 1cm;
+        }
+
+        h2,
+        span,
+        .custom-checkbox {
+            margin-left: 20px;
+        }
+
+        .custom-checkbox {
+            -webkit-appearance: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 2px;
+            display: inline-block;
+            position: relative;
+            top: 6px;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #95e9a1;
+        }
+
+        .custom-checkbox:checked:after {
+            content: '\2714';
+            font-size: 10px;
+            position: absolute;
+            top: 1px;
+            left: 4px;
+            color: #fff;
+        }
+
+        .custom-checkbox:focus {
+            outline: none;
+        }
+
+        label {
+            display: inline-block;
+            padding-top: 10px;
+            padding-left: 5px;
+        }
+
+        .signin {
+            background-color: #95e9a1;
+            color: #000000;
+            width: 100%;
+            padding: 10px 20px;
+            display: block;
+            height: 39px;
+            border-radius: 20px;
+            margin-top: 30px;
+            transition: all 0.5s ease-in-out;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        .signin:hover {
+            background: #e4e4a1;
+            box-shadow: 0px 4px 35px -5px #e4e4a1;
+            cursor: pointer;
+        }
+
+        .signin:focus {
+            outline: none;
+        }
+
+        hr {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            top: 85px;
+            position: relative;
+        }
+
+        a {
+            text-align: center;
+            display: block;
+            top: 120px;
+            position: relative;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+    <div class="login">
+        {% for flash_error in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        {% endfor %}
+        <h2 class="active"> Register </h2>
+
+
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.nom) }}
+        {{ form_row(registrationForm.prenom) }}
+        {{ form_row(registrationForm.adresse) }}
+        {{ form_row(registrationForm.telephone) }}
+
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button class="signin" type="submit">Register</button>
+        {{ form_end(registrationForm) }}
+
+    </div>
+{% endblock %}

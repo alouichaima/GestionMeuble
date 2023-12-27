@@ -1,0 +1,167 @@
+{% block title %}{% endblock %}
+
+{% block body %}
+    <style>
+        body{margin-top:50px;
+
+            color:#0c4128;
+            background-image: url("https://i.pinimg.com/originals/43/95/b3/4395b357bfcdb8daa4de5f1c24824dbf.jpg");
+        }
+
+
+        .img-account-profile {
+            height: 10rem;
+        }
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+        .card {
+            box-shadow: 0 0.15rem 1.75rem 0 #0c4128 ;
+            margin: 0 auto; /* Center the card horizontally */
+            width: 70%; /* Adjust the width as needed */
+            box-shadow: 0 0.15rem 1.75rem 0 #0c4128;
+        }
+        .card-body {
+            text-align: center; /* Center the content within the card body */
+        }
+        .card .card-header {
+            font-weight: 500;
+        }
+        .card-header:first-child {
+            border-radius: 0.35rem 0.35rem 0 0;
+        }
+        .card-header {
+            padding: 1rem 1.35rem;
+            margin-bottom: 0;
+            background-color: rgba(33, 40, 50, 0.03);
+            border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+        }
+        .form-control, .dataTable-input {
+            display: block;
+            width: 35%;
+            padding: 0.875rem 1.125rem;
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1;
+            color: #0c4128;
+            margin:0 auto;
+
+            background-clip: padding-box;
+            border: 1px solid #69707a;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.35rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+
+
+        .nav-borders .nav-link.active {
+            color: #0c4128;
+            border-bottom-color: #0061f2;
+        }
+        .nav-borders .nav-link {
+            color: #0c4128;
+            border-bottom-width: 0.125rem;
+            border-bottom-style: solid;
+            border-bottom-color: transparent;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        .btn {
+            background-color: #0c4128;
+            border: none;
+            width: 150px;
+            color: white;
+            padding: 10px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 12px;
+            font-size: 12px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
+
+    </style>
+
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+        <nav class="nav nav-borders">
+
+            <a class="nav-link active ms-0" href="{{ path('app_user_profil') }}" target="__blank">  Your Profil</a>
+            <a class="nav-link" href="{{ path('app_home_page') }}" target="__blank">Home</a>
+            <a class="nav-link" href="{{ path('app_shop') }}" target="__blank">Shop</a>
+            <a class="nav-link" href="{{ path('app_about') }}"  target="__blank">About Us</a>
+            <a class="nav-link" href="{{ path('app_cart') }}"  target="__blank">Your Cart</a>
+            <a class="nav-link" href="{{ path('add')}}" >List of commands</a>
+            <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+
+
+        </nav>
+        <hr class="mt-0 mb-4">
+        <div class="row">
+            <div class="col-xl-4">
+
+
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header"> Your Account Details</div>
+                    <div class="card-body">
+                        <form>
+
+
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName">NOM</label>
+                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value ={{ app.user.nom }}>
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">PRENOM</label>
+                                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value={{ app.user.prenom}}>
+                                </div>
+                            </div>
+                            <!-- Form Row        -->
+                            <div class="row gx-3 mb-3">
+
+                                <!-- Form Group (location)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation">ADRESSE</label>
+                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value={{ app.user.adresse }}>
+                                </div>
+                            </div>
+                            <!-- Form Group (email address)-->
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">EMAIL</label>
+                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value={{ app.user.email }}>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (phone number)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">TELEPHONE</label>
+                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value={{ app.user.telephone }}>
+                                </div>
+
+
+                            </div>
+                            <!-- Edit button -->
+                            <button class="btn btn-primary" type="button" onclick="window.location.href='{{ path('app_edit_user', {'id': app.user.id}) }}'">Edit</button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
